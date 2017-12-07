@@ -21,6 +21,13 @@ import { PessoaComponent } from './pessoa/pessoa.component';
 import { ListaDePessoasComponent } from './lista-de-pessoas/lista-de-pessoas.component';
 import {CadastroDePessoaComponent} from './cadastro-de-pessoa/cadastro-de-pessoa.component';
 import {PessoasService} from './pessoas.service';
+import { FuncionariosService } from './funcionarios.service';
+import { CadastroDeFuncionarioComponent } from './cadastro-de-funcionario/cadastro-de-funcionario.component';
+import { CargosService } from './cargos.service';
+import { TiposService } from './tipos.service';
+import { FuncoesService } from './funcoes.service';
+import { ListaDeFuncionariosComponent } from './lista-de-funcionarios/lista-de-funcionarios.component';
+import { FuncionarioComponent } from './funcionario/funcionario.component';
 
 
 @NgModule({
@@ -44,12 +51,19 @@ import {PessoasService} from './pessoas.service';
     PaginaNaoEncontradaComponent,
     PessoaComponent,
     ListaDePessoasComponent,
-    CadastroDePessoaComponent
+    CadastroDePessoaComponent,
+    CadastroDeFuncionarioComponent,
+    ListaDeFuncionariosComponent,
+    FuncionarioComponent
   ],
   providers: [
     DisciplinasService,
     TurmasService,
-    PessoasService
+    PessoasService,
+    FuncionariosService,
+    CargosService,
+    TiposService,
+    FuncoesService
   ]
 })
 export class AdminModule {
