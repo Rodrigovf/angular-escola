@@ -10,7 +10,7 @@ export class TurmasService {
   constructor(private http: HttpClient) {
   }
 
-  getTurmas(q?: string, disciplina?: number, ano?: number): Observable<Turma[]> {
+  getTurmas(q?: string, disciplina?: number, ano?: number): Observable<any[]> {
     let url = this.API_URL + '/turmas';
     if (q) {
       url += '?q=' + q;
@@ -39,7 +39,7 @@ export class TurmasService {
     return this.http.get<Turma[]>(url);
   }
 
-  getTurma(id: number): Observable<Turma> {
+  getTurma(id: number): Observable<any> {
     return this.http.get<Turma>(this.API_URL + '/turmas/' + id + '?_expand=disciplina');
   }
 
