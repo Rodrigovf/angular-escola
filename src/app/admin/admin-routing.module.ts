@@ -17,10 +17,10 @@ import {ListaDeFuncionariosComponent} from './lista-de-funcionarios/lista-de-fun
 import { CadastroDeFrequenciaComponent } from './cadastro-de-frequencia/cadastro-de-frequencia.component';
 import { FrequenciaComponent } from './frequencia/frequencia.component';
 import {CadastroDeFuncionarioComponent} from './cadastro-de-funcionario/cadastro-de-funcionario.component';
-
+import { ListaDeFrequenciasComponent } from './lista-de-frequencias/lista-de-frequencias.component';
 const routes: Routes = [
   {
-    path: '', component: AdminComponent, children: [
+    path: 'admin', component: AdminComponent, children: [
       {path: 'disciplinas', component: ListaDeDisciplinasComponent},
       {path: 'disciplinas/:id', component: DisciplinaComponent},
       {path: 'disciplinas/:id/novo', component: CadastroDeDisciplinaComponent},
@@ -36,6 +36,8 @@ const routes: Routes = [
       {path: 'funcionarios/:id', component: FuncionarioComponent},
       {path: 'funcionarios/:id/novo', component: CadastroDeFuncionarioComponent},
       {path: 'funcionarios/:id/editar', component: CadastroDeFuncionarioComponent},
+      {path: 'frequencias/relatorio', component: ListaDeFrequenciasComponent},
+      {path: 'frequencias/cadastrar', component: CadastroDeFrequenciaComponent},
       {path: '', component: CadastroDeFrequenciaComponent},
       {path: '**', component: PaginaNaoEncontradaComponent}
   ]}

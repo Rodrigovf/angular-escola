@@ -31,6 +31,7 @@ import { FuncionarioComponent } from './funcionario/funcionario.component';
 import { CadastroDeFrequenciaComponent } from './cadastro-de-frequencia/cadastro-de-frequencia.component';
 import { FrequenciaComponent } from './frequencia/frequencia.component';
 import { FrequenciasService } from './frequencias.service';
+import { ListaDeFrequenciasComponent } from './lista-de-frequencias/lista-de-frequencias.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { FrequenciasService } from './frequencias.service';
     ListaDeFuncionariosComponent,
     FuncionarioComponent,
     CadastroDeFrequenciaComponent,
-    FrequenciaComponent
+    FrequenciaComponent,
+    ListaDeFrequenciasComponent
   ],
   providers: [
     DisciplinasService,
