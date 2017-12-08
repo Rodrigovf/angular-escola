@@ -28,6 +28,9 @@ import { TiposService } from './tipos.service';
 import { FuncoesService } from './funcoes.service';
 import { ListaDeFuncionariosComponent } from './lista-de-funcionarios/lista-de-funcionarios.component';
 import { FuncionarioComponent } from './funcionario/funcionario.component';
+import { CadastroDeFrequenciaComponent } from './cadastro-de-frequencia/cadastro-de-frequencia.component';
+import { FrequenciaComponent } from './frequencia/frequencia.component';
+import { FrequenciasService } from './frequencias.service';
 
 
 @NgModule({
@@ -54,7 +57,9 @@ import { FuncionarioComponent } from './funcionario/funcionario.component';
     CadastroDePessoaComponent,
     CadastroDeFuncionarioComponent,
     ListaDeFuncionariosComponent,
-    FuncionarioComponent
+    FuncionarioComponent,
+    CadastroDeFrequenciaComponent,
+    FrequenciaComponent
   ],
   providers: [
     DisciplinasService,
@@ -63,7 +68,8 @@ import { FuncionarioComponent } from './funcionario/funcionario.component';
     FuncionariosService,
     CargosService,
     TiposService,
-    FuncoesService
+    FuncoesService,
+    FrequenciasService
   ]
 })
 export class AdminModule {

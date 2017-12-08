@@ -14,12 +14,13 @@ import {ListaDePessoasComponent} from './lista-de-pessoas/lista-de-pessoas.compo
 import {CadastroDePessoaComponent} from './cadastro-de-pessoa/cadastro-de-pessoa.component';
 import {FuncionarioComponent} from './funcionario/funcionario.component';
 import {ListaDeFuncionariosComponent} from './lista-de-funcionarios/lista-de-funcionarios.component';
-
+import { CadastroDeFrequenciaComponent } from './cadastro-de-frequencia/cadastro-de-frequencia.component';
+import { FrequenciaComponent } from './frequencia/frequencia.component';
 import {CadastroDeFuncionarioComponent} from './cadastro-de-funcionario/cadastro-de-funcionario.component';
 
 const routes: Routes = [
   {
-    path: 'admin', component: AdminComponent, children: [
+    path: '', component: AdminComponent, children: [
       {path: 'disciplinas', component: ListaDeDisciplinasComponent},
       {path: 'disciplinas/:id', component: DisciplinaComponent},
       {path: 'disciplinas/:id/novo', component: CadastroDeDisciplinaComponent},
@@ -35,7 +36,7 @@ const routes: Routes = [
       {path: 'funcionarios/:id', component: FuncionarioComponent},
       {path: 'funcionarios/:id/novo', component: CadastroDeFuncionarioComponent},
       {path: 'funcionarios/:id/editar', component: CadastroDeFuncionarioComponent},
-      {path: '', component: HomeComponent},
+      {path: '', component: CadastroDeFrequenciaComponent},
       {path: '**', component: PaginaNaoEncontradaComponent}
   ]}
 ];
