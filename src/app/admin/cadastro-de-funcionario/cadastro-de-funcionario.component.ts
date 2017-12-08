@@ -67,7 +67,7 @@ export class CadastroDeFuncionarioComponent implements OnInit{
     if (this.id) {
       console.log ( this.id );
       this.funcionariosService.updateFuncionario(this.id,parseInt(this.funcionario.tipoId),parseInt(this.funcionario.pessoaId),parseInt(this.funcionario.cargoId),this.funcionario.funcoes)
-        .subscribe(disciplina => {
+        .subscribe(funcionario => {
             this.atualizar_ok = true;
             this.atualizar_erro = false;
           },
