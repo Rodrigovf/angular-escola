@@ -47,12 +47,24 @@ cadastro_erro = false;
       .subscribe(
         turma => {
           this.cadastro_ok = true;
+          this.limpar();
         },
         erro => {
           this.cadastro_erro = true;
           this.cadastro_ok = false;
         }
       );
+  }
+
+  limpar(){
+    this.turma=null;
+    this.disciplina=null;
+    this.professor=null;
+    this.horario=null;
+    this.aluno=null;
+    this.data=null;
+    this.status=null;
+
   }
 
 }

@@ -1,5 +1,5 @@
-<a routerLink="/admin/frequencias/cadastrar" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Cadastrar frequencia</a>
-<h1>Lista de funcionarios</h1>
+<a routerLink="/frequencias/cadastrar" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Cadastrar frequencia</a>
+<h1>Lista de frequência</h1>
 <hr>
 <table class="table table-bordered table-striped table-hover">
     <thead class="thead-dark">
@@ -7,9 +7,9 @@
         <th>Turma</th>
         <th>Disciplina</th>
         <th>Professor</th>
-        <th>Hoarario</th>
-        <th>Data</th>
-        <th>Status</th>
+        <th>Aluno</th>
+        <th>Presenças</th>
+        <th>Faltas</th>
     </tr>
     </thead>
     <tbody>
@@ -17,9 +17,10 @@
         <td>{{frequencia.turma.codigo}}</td>
         <td>{{frequencia.disciplina.nome}}</td>
         <td>{{frequencia.professor.nome}}</td>
-        <td>{{frequencia.horario.nome}}</td>
-        <td>{{frequencia.data}}</td>
+        <td>{{frequencia.aluno.nome}}</td>
         <td>{{frequencia.status}}</td>
     </tr>
     </tbody>
 </table>
+
+<pre>{{frequencias|json}}</pre>

@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-dark navbar-expand-lg " style="background-color: #a80000;">
   <div class="container">
-    <a class="navbar-brand" routerLink="/">Gerenciador Escolar</a>
+    <a class="navbar-brand" routerLink="/">Gerenciador de Frenquência</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,28 +9,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+          <a class="nav-link" routerLink="/frequencias/cadastrar" routerLinkActive="active">Cadastrar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/admin/disciplinas" routerLinkActive="active">Disciplinas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/admin/turmas" routerLinkActive="active">Turmas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/admin/pessoas" routerLinkActive="active">Pessoas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/admin/funcionarios" routerLinkActive="active">Funcionários</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/admin/frequencias/relatorio" routerLinkActive="active">Frequência</a>
+          <a class="nav-link" routerLink="/frequencias/relatorio" routerLinkActive="active">Relatório</a>
         </li>
       </ul>
-      <div class="navbar-text">
+      <!--<div class="navbar-text">
         Olá, {{usuario?.nome}}! |
         <a href="#" (click)="sair()">Sair</a>
-      </div>
+      </div>-->
     </div>
   </div>
 </nav>

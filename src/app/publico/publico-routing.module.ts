@@ -5,8 +5,8 @@ import {PublicoComponent} from "./publico/publico.component";
 
 const routes: Routes = [
   {
-    path: 'teste', component: PublicoComponent, children: [
-      {path: 'teste1', component: LoginComponent}
+    path: '', component: PublicoComponent, children: [
+      {path: '', component: LoginComponent}
     ]
   }
 ];
