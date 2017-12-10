@@ -10,12 +10,9 @@ import {Router} from '@angular/router';
 export class ListaDeFrequenciasComponent implements OnInit {
   frequencias=[];
   alunos=[];
-  relatorio=[];
   constructor(private frequenciasService: FrequenciasService,
     private router: Router) { 
 
-
-      
     }
 
   ngOnInit() {
@@ -24,18 +21,7 @@ export class ListaDeFrequenciasComponent implements OnInit {
 
     this.frequenciasService.getAlunos()
     .subscribe(alunos => this.alunos = alunos);
-    console.log("ngOnit")
     
-    this.geraRelatorio(this.frequencias)
-  }
-
-  geraRelatorio(frequencias){
-    console.log("geraRelatório")
-    this.relatorio=frequencias
-    for (let item of frequencias) {
-      console.log("entrei")
-      console.log(item  );
-  }
   }
 
 }

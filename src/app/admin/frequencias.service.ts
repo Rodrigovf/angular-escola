@@ -6,7 +6,7 @@ import {Observable} from "rxjs/Observable";
 export class FrequenciasService {
   API_URL = 'http://localhost:3000';
   constructor(private http: HttpClient) { }
-  frequencias=[];
+  
 
 
   getDisciplinas(): Observable<any[]> {
@@ -57,6 +57,8 @@ export class FrequenciasService {
   
   getFrequencias(): Observable<any[]> {
     return this.http.get<any[]>(this.API_URL + '/frequencias/?_expand=turma&_expand=disciplina&_expand=professor&_expand=horario&_expand=aluno');
+    
+    
   }
 
   save(turmaId: number, disciplinaId: number, professorId: number, horarioId: number, alunoId: number, data: string,  status: string ) {
