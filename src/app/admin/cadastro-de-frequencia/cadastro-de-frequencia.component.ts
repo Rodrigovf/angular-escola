@@ -13,13 +13,13 @@ turmas=[];
 professores=[];
 horarios=[];
 alunos=[];
-disciplina;
-turma;
-professor;
+disciplina=null;
+turma=null;
+professor = null;
 horario;
 aluno;
 data;
-status;
+status='P';
 cadastro_ok = false;
 cadastro_erro = false;
 

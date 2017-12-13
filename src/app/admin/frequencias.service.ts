@@ -61,8 +61,13 @@ export class FrequenciasService {
     
   }
 
-  save(turmaId: number, disciplinaId: number, professorId: number, horarioId: number, alunoId: number, data: string,  status: string ) {
-    const frequencia = {'turmaId': turmaId, 'disciplinaId': disciplinaId, 'professorId': professorId, 'horarioId': horarioId, 'alunoId': alunoId, 'data': data,  'status': status};
+  save(turmaId: number, disciplinaId: number, professorId: number, horarioId: number,
+     alunoId: number, data: string,  status: string ) 
+    {
+    const frequencia = {'turmaId': turmaId, 'disciplinaId': disciplinaId,
+     'professorId': professorId, 'horarioId': horarioId, 'alunoId': alunoId,
+     'data': data,  'status': status
+    };
     return this.http.post(this.API_URL + '/frequencias', frequencia);
   }
 

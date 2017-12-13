@@ -19,10 +19,9 @@
         <td>{{frequencia.disciplina.nome}}</td>
         <td>{{frequencia.professor.nome}}</td>
         <td>{{frequencia.aluno.nome}}</td>
-        <td class="text-center"><p *ngIf="frequencia.status === 'P'">1</p>
-            <p *ngIf="frequencia.status != 'P'">0</p></td>
-        <td class="text-center"><p *ngIf="frequencia.status === 'F'">1</p>
-            <p *ngIf="frequencia.status != 'F'">0</p></td>
+        <td>{{frequencia.qtd_presencas}}</td>
+        <td>{{frequencia.qtd_faltas}}</td>
+        
     </tr>
     </tbody>
 </table>
