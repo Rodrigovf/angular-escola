@@ -21,6 +21,9 @@ export class CadastroDeMatriculaComponent implements OnInit {
   cadastro_erro;
   atualiza_ok=null;
   atualiza_erro=null;
+  limite_erro=null;
+  quantidade_de_alunos;
+  total = 30;
   
   
   
@@ -45,35 +48,49 @@ export class CadastroDeMatriculaComponent implements OnInit {
   }
 
   salvar() {
-    console.log(this.id)
     if(this.id){
-      this.api.updateMatricula(this.id,parseInt(this.turma),parseInt(this.aluno))
-      .subscribe(
-        matricula => {
-          this.cadastro_ok = true;
-          this.cadastro_erro = false;
-         // this.limpar();
-        },
-        erro => {
-          this.cadastro_erro = true;
-          this.cadastro_ok = false;
-        }
-      );
-    }else{
-      this.api.addMatricula(parseInt(this.turma),parseInt(this.aluno))
-      .subscribe(
-        matricula => {
-          this.atualiza_ok = true;
-          this.atualiza_erro = false;
-         // this.limpar();
-        },
-        erro => {
-          this.atualiza_erro = true;
-          this.atualiza_ok = false;
-        }
-      );
+     
+        this.api.updateMatricula(this.id,parseInt(this.turma),parseInt(this.aluno))
+        .subscribe(
+          matricula => {
+            this.atualiza_ok = true;
+            this.atualiza_erro = false;
+            
+          // this.limpar();
+          },
+          erro => {
+            this.atualiza_erro = true;
+            this.atualiza_ok = false;
+          }
+        );
+     
     }
-    
+    else{
+      console.log(this.turma)
+      this.api.matriculasNaTurma(this.turma)
+      .subscribe(matriculas => {
+        this.quantidade_de_alunos = matriculas.length;
+        console.log(this.quantidade_de_alunos)
+      });
+
+      if(this.quantidade_de_alunos < this.total){
+        this.api.addMatricula(parseInt(this.turma),parseInt(this.aluno))
+        .subscribe(
+          matricula => {
+            this.cadastro_ok = true;
+            this.cadastro_erro = false;
+            this.limite_erro = false;
+          // this.limpar();
+          },
+          erro => {
+            this.cadastro_erro = true;
+            this.cadastro_ok = false;
+          }
+        );
+      }else{
+        this.limite_erro = true;
+      }
+    }
   }
 
 }

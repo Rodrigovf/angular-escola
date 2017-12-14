@@ -11,6 +11,9 @@
 <div class="alert alert-danger" *ngIf="atualiza_erro">
     <strong>Opa!</strong> Aconteceu um erro ao tentar atualizar. Aguarde alguns instantes e tente novamente.
 </div>
+<div class="alert alert-danger" *ngIf="limite_erro">
+    <strong>Opa!</strong> A turma selecionada já possui 30 alunos.
+</div>
 
 <form #cadastro="ngForm" (submit)="salvar()">
   <div class="form-group">

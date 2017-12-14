@@ -42,6 +42,9 @@ export class ApiService {
   getMatricula(id:number): Observable<any> {
     return this.http.get<any[]>(this.API_URL +'/matriculas/'+id+'?_expand=turma&_expand=aluno');
   }
+  matriculasNaTurma(id:number): Observable<any> {
+    return this.http.get<any[]>(this.API_URL +'/matriculas?turmaId='+id);
+  }
 
   deleteMatricula(id:number): Observable<any> {
     return this.http.delete(this.API_URL + '/matriculas/'+id)
