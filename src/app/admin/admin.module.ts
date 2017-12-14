@@ -13,6 +13,8 @@ import { FrequenciasService } from './frequencias.service';
 import { FrequenciaComponent } from './frequencia/frequencia.component';
 import { ListaDeFrequenciasComponent } from './lista-de-frequencias/lista-de-frequencias.component';
 import { CadastroDeFrequenciaComponent } from './cadastro-de-frequencia/cadastro-de-frequencia.component';
+import { ApiturmasService } from './apiturmas.service';
+import { RelatorioTurmasComponent } from './relatorio-turmas/relatorio-turmas.component';
 
 
 @NgModule({
@@ -30,10 +32,12 @@ import { CadastroDeFrequenciaComponent } from './cadastro-de-frequencia/cadastro
     PaginaNaoEncontradaComponent,
     CadastroDeFrequenciaComponent,
     FrequenciaComponent,
-    ListaDeFrequenciasComponent
+    ListaDeFrequenciasComponent,
+    RelatorioTurmasComponent
   ],
   providers: [
-    FrequenciasService
+    FrequenciasService,
+    ApiturmasService
   ]
 })
 export class AdminModule {
