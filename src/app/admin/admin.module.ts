@@ -10,14 +10,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {SharedModule} from '../shared/shared.module';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { FrequenciasService } from './frequencias.service';
-import { FrequenciaComponent } from './frequencia/frequencia.component';
-import { ListaDeFrequenciasComponent } from './lista-de-frequencias/lista-de-frequencias.component';
-import { CadastroDeFrequenciaComponent } from './cadastro-de-frequencia/cadastro-de-frequencia.component';
-import { RelatorioTurmasComponent } from './relatorio-turmas/relatorio-turmas.component';
 import { ApiturmasService } from './apiturmas.service';
-import { CadastroDeMatriculaComponent } from './cadastro-de-matricula/cadastro-de-matricula.component';
 import { ApiService } from './api.service';
-import { ListaDeMatriculasComponent } from './lista-de-matriculas/lista-de-matriculas.component';
+import { GerenciarTurmasComponent } from './gerenciar-turmas/gerenciar-turmas.component';
 
 
 @NgModule({
@@ -33,12 +28,7 @@ import { ListaDeMatriculasComponent } from './lista-de-matriculas/lista-de-matri
     HomeComponent,
     AdminComponent,
     PaginaNaoEncontradaComponent,
-    CadastroDeFrequenciaComponent,
-    FrequenciaComponent,
-    ListaDeFrequenciasComponent,
-    RelatorioTurmasComponent,
-    CadastroDeMatriculaComponent,
-    ListaDeMatriculasComponent
+    GerenciarTurmasComponent,
   ],
   providers: [
     FrequenciasService,

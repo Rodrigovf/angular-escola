@@ -7,13 +7,23 @@ export class ApiService {
   API_URL = 'http://localhost:3000';
   constructor(private http: HttpClient) { }
 
+  //Serviços do requisito 1
   getTurmas(): Observable<any[]> {
     return this.http.get<any[]>(this.API_URL +'/turmas');
   }
-
-  getTurma(id:number): Observable<any[]> {
-    return this.http.get<any[]>(this.API_URL +'/turmas/'+id);
+  getTurma(id: number): Observable<any> {
+    return this.http.get<any>(this.API_URL +'/turmas/'+id);
   }
+
+  getMaticulasNaTurma(id:number): Observable<any[]> {
+    return this.http.get<any[]>(this.API_URL +'matriculas?turmaId='+id);
+  }
+
+  getProfessoresNaTurma(id:number): Observable<any[]> {
+    return this.http.get<any[]>(this.API_URL +'professoresNasTurmas?turmaId='+id+'&_expand=professor&_expand=disciplina');
+  }
+//################################################################################################################
+
   // Reronas alunos e aluno id
   getAlunos(): Observable<any[]> {
     return this.http.get<any[]>(this.API_URL +'/alunos');
