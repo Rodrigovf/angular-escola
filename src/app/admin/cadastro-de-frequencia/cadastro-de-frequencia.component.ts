@@ -47,7 +47,7 @@ cadastro_erro = false;
       .subscribe(
         turma => {
           this.cadastro_ok = true;
-          this.limpar();
+         // this.limpar();
         },
         erro => {
           this.cadastro_erro = true;
@@ -63,7 +63,7 @@ cadastro_erro = false;
     this.horario=null;
     this.aluno=null;
     this.data=null;
-    this.status=null;
+    this.status='P';
 
   }
 
