@@ -16,7 +16,8 @@ const routes: Routes = [
     path: '', component: AdminComponent, children: [
       {path: 'frequencias/relatorio', component: ListaDeFrequenciasComponent},
       {path: 'frequencias/cadastrar', component: CadastroDeFrequenciaComponent},
-      {path: 'turmas/cadastrar', component: RelatorioTurmasComponent},
+      {path: 'turmas/relatorio', component: RelatorioTurmasComponent},
+      {path: 'turmas/cadastrar', component: CadastroDeMatriculaComponent},
       {path: 'matriculas/cadastrar', component: CadastroDeMatriculaComponent},
       {path: 'matriculas/:id/editar', component: CadastroDeMatriculaComponent},
       {path: 'matriculas/relatorio', component: ListaDeMatriculasComponent},

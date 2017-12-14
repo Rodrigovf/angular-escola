@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ApiService} from '../api.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -18,6 +19,8 @@ export class CadastroDeMatriculaComponent implements OnInit {
   aluno=null;
   cadastro_ok;
   cadastro_erro;
+  atualiza_ok=null;
+  atualiza_erro=null;
   
   
   
@@ -28,8 +31,8 @@ export class CadastroDeMatriculaComponent implements OnInit {
     if (this.id) {
       this.api.getMatricula(this.id)
         .subscribe(matricula => {
-          this.turma = matricula.turma;
-          this.aluno = matricula.aluno;
+          this.turma = matricula.turmaId;
+          this.aluno = matricula.alunoId;
           
         });
     }
@@ -42,9 +45,11 @@ export class CadastroDeMatriculaComponent implements OnInit {
   }
 
   salvar() {
-    this.api.addMatricula(parseInt(this.turma),parseInt(this.aluno))
+    console.log(this.id)
+    if(this.id){
+      this.api.updateMatricula(this.id,parseInt(this.turma),parseInt(this.aluno))
       .subscribe(
-        turma => {
+        matricula => {
           this.cadastro_ok = true;
           this.cadastro_erro = false;
          // this.limpar();
@@ -54,6 +59,21 @@ export class CadastroDeMatriculaComponent implements OnInit {
           this.cadastro_ok = false;
         }
       );
+    }else{
+      this.api.addMatricula(parseInt(this.turma),parseInt(this.aluno))
+      .subscribe(
+        matricula => {
+          this.atualiza_ok = true;
+          this.atualiza_erro = false;
+         // this.limpar();
+        },
+        erro => {
+          this.atualiza_erro = true;
+          this.atualiza_ok = false;
+        }
+      );
+    }
+    
   }
 
 }

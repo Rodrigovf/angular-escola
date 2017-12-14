@@ -32,7 +32,7 @@ export class ApiService {
  updateMatricula(id:number, turmaId: number, alunoId: number ) 
  {
  const matricula = {turmaId: turmaId, alunoId: alunoId};
- return this.http.post(this.API_URL + '/matriculas/'+id, matricula);
+ return this.http.put(this.API_URL + '/matriculas/'+id, matricula);
 }
 
   getMatriculas(): Observable<any[]> {
