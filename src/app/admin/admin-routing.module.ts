@@ -19,7 +19,7 @@ import {CadastroDeFuncionarioComponent} from './cadastro-de-funcionario/cadastro
 
 const routes: Routes = [
   {
-    path: 'admin', component: AdminComponent, children: [
+    path: '', component: AdminComponent, children: [
       {path: 'disciplinas', component: ListaDeDisciplinasComponent},
       {path: 'disciplinas/:id', component: DisciplinaComponent},
       {path: 'disciplinas/:id/novo', component: CadastroDeDisciplinaComponent},
