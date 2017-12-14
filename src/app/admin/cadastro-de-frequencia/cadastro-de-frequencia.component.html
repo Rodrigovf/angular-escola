@@ -9,8 +9,8 @@
  </div>
  <form #cadastro="ngForm" (submit)="salvar()">
    <div class="form-group">
-     <label for="turma">Turma</label>
-     <select  class="form-control" required [(ngModel)]="turma" name="turma">
+     r<label for="turma">Turma</label>
+     <select  class="form-control" required [(ngModel)]="tuma" name="turma">
        <option *ngFor="let turma of turmas" [value]="turma.id">{{turma.codigo}}</option>
      </select>
    </div>
