@@ -11,6 +11,7 @@ export class ApiService {
   getTurmas(): Observable<any[]> {
     return this.http.get<any[]>(this.API_URL +'/turmas');
   }
+
   getTurma(id: number): Observable<any[]> {
     return this.http.get<any[]>(this.API_URL +'/turmas/'+id);
   }
@@ -28,6 +29,7 @@ export class ApiService {
     return this.http.get<any[]>(this.API_URL +'/matriculas?turmaId='+id+'&_expand=aluno');
    }
 
+
    addNotas(turmaId: number, alunoId: number ,disciplinaId: number, nota1:number,nota2:number,nota3:number,nota4:number) 
    {
    const nota = {turmaId: turmaId, alunoId: alunoId,
@@ -35,6 +37,26 @@ export class ApiService {
      nota3:nota3,nota4:nota4};
    return this.http.post(this.API_URL + '/notas', nota);
  }
+
+//################################################################################################################
+
+  // Serviçoes do requisito três, mas também pode utilizar de outros requisitos
+
+ getProfDaDisciplinaNaTurma(turmaId:number,disciplinaId:number): Observable<any[]> {
+  return this.http.get<any[]>(this.API_URL +'/professoresNasTurmas?turmaId='+turmaId+'&disciplinaId='+disciplinaId+'&_expand=professor');
+}
+
+getAlunoNaDisciplinaDaTurma(turmaId:number,disciplinaId:number): Observable<any[]> {
+  return this.http.get<any[]>(this.API_URL +'/notas?turmaId='+turmaId+'&disciplinaId='+disciplinaId+'&_expand=aluno');
+}
+
+
+
+
+
+
+
+
 
 
 

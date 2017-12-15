@@ -1,3 +1,46 @@
+<h1>Geriaciar Disciplina</h1>
+<hr>
+
+<h3>Dados de turma:</h3>
 <p>
-  gerenciar-disciplina works!
-</p>
+  <strong>Identificador</strong>: {{turma.id}}</p>
+<p>
+  <strong>Ano</strong>: {{turma.ano}}</p>
+<p>
+  <strong>Codigo</strong>: {{turma.codigo}}</p>
+<hr>
+<h3>Dados da disciplina:</h3>
+
+  <p>
+  <strong>Identificador</strong>: {{discipina.disciplina.id}}</p>
+<p>
+  <strong>nome</strong>: {{disciplina.disciplina.nome}}</p>
+
+  <h3>Dados do Professor:</h3>
+  
+    <p>
+    <strong>Nome</strong>: {{professor.professor.nome}}</p>
+
+
+  <table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+    <tr>
+        <th>nome</th>
+        <th>nota1</th>
+        <th>nota2</th>
+        <th>nota3</th>
+        <th>nota4</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let aluno of alunoNotas">
+        <td>{{aluno.aluno.nome}}</td>
+        <td>{{aluno.nota1}}</td>
+        <td>{{aluno.nota2}}</td>
+        <td>{{aluno.nota3}}</td>
+        <td>{{aluno.nota4}}</td>
+        
+    </tr>
+    </tbody>
+</table>

@@ -34,7 +34,8 @@ export class RegsitroDeNotasComponent implements OnInit {
   }
 
   salvar(){
-    this.api.addNotas(parseInt(this.turmaId),parseInt(this.aluno),parseInt(this.disciplinaId),this.nota1,this.nota2,this.nota3,this.nota4)
+    this.api.addNotas(parseInt(this.turmaId),parseInt(this.aluno),
+    parseInt(this.disciplinaId),this.nota1,this.nota2,this.nota3,this.nota4)
     .subscribe(
       funcionario => {  }
     );
