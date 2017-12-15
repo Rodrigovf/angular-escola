@@ -1,0 +1,29 @@
+<h1>Registro de Notas</h1>
+
+<form #cadastro="ngForm" (submit)="salvar()">
+
+  <div class="form-group">
+    <label for="pessoa">Aluno</label>
+    <select  class="form-control" required [(ngModel)]="aluno" name="aluno">
+      <option *ngFor="let aluno of alunos" [value]="aluno.aluno.id">{{aluno.aluno.nome}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="nota1">Nota 1</label>
+    <input type="number" name="nota1" id="nota1" class="form-control" [(ngModel)]="nota1" required>
+  </div>
+  <div class="form-group">
+    <label for="nota2">Nota 2</label>
+    <input type="number" name="nota2" id="nota2" class="form-control" [(ngModel)]="nota2" required>
+  </div>
+  <div class="form-group">
+    <label for="nota3">Nota 3</label>
+    <input type="number" name="nota3" id="nota3" class="form-control" [(ngModel)]="nota3" required>
+  </div>
+  <div class="form-group">
+    <label for="nota4">Nota 4</label>
+    <input type="number" name="nota4" id="nota4" class="form-control" [(ngModel)]="nota4" required>
+  </div>
+  <button class="btn btn-primary" [disabled]="!cadastro.valid">Salvar</button>
+</form>
+

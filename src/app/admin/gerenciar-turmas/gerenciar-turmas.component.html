@@ -1,3 +1,30 @@
+<h1>Geriaciar Turma</h1>
+<hr>
 <p>
-  gerenciar-turmas works!
-</p>
+  <strong>Identificador</strong>: {{turma.id}}</p>
+<p>
+  <strong>Ano</strong>: {{turma.ano}}</p>
+<p>
+  <strong>Codigo</strong>: {{turma.codigo}}</p>
+
+  <table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+    <tr>
+        <th>Disciplinas</th>
+        <th>Professor</th>
+        <th width="250">Cad. Notas</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let disciplina of disciplinas">
+        <td>{{disciplina.disciplina.nome}}</td>
+        <td>{{disciplina.professor.nome}}</td>
+        <td swidth="80">
+            <a [routerLink]="['/turmas', turma.id, 'disciplinas', disciplina.disciplina.id, 'registrar-notas']" class="btn btn-secondary btn-sm">Adicionar Notas</a>
+        </td>
+        
+    </tr>
+    </tbody>
+</table>
+

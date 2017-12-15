@@ -7,24 +7,37 @@ export class ApiService {
   API_URL = 'http://localhost:3000';
   constructor(private http: HttpClient) { }
 
-  //Serviços do requisito 1
+  //Serviços do requisito um
   getTurmas(): Observable<any[]> {
     return this.http.get<any[]>(this.API_URL +'/turmas');
   }
-  getTurma(id: number): Observable<any> {
-    return this.http.get<any>(this.API_URL +'/turmas/'+id);
+  getTurma(id: number): Observable<any[]> {
+    return this.http.get<any[]>(this.API_URL +'/turmas/'+id);
   }
 
-  getMaticulasNaTurma(id:number): Observable<any[]> {
-    return this.http.get<any[]>(this.API_URL +'matriculas?turmaId='+id);
-  }
+ 
 
   getProfessoresNaTurma(id:number): Observable<any[]> {
-    return this.http.get<any[]>(this.API_URL +'professoresNasTurmas?turmaId='+id+'&_expand=professor&_expand=disciplina');
+    return this.http.get<any[]>(this.API_URL +'/professoresNasTurmas?turmaId='+id+'&_expand=professor&_expand=disciplina');
   }
 //################################################################################################################
 
-  // Reronas alunos e aluno id
+  // Serviçoes do requisito dois 
+
+  getAlunosTurma(id:number): Observable<any[]> {
+    return this.http.get<any[]>(this.API_URL +'/matriculas?turmaId='+id+'&_expand=aluno');
+   }
+
+   addNotas(turmaId: number, alunoId: number ,disciplinaId: number, nota1:number,nota2:number,nota3:number,nota4:number) 
+   {
+   const nota = {turmaId: turmaId, alunoId: alunoId,
+     disciplinaId: disciplinaId, nota1:nota1,nota2:nota2,
+     nota3:nota3,nota4:nota4};
+   return this.http.post(this.API_URL + '/notas', nota);
+ }
+
+
+
   getAlunos(): Observable<any[]> {
     return this.http.get<any[]>(this.API_URL +'/alunos');
   }

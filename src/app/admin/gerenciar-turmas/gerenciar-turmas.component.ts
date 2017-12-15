@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from "../api.service";
+import {Router, ActivatedRoute, ParamMap} from '@angular/router';
+
 
 @Component({
   selector: 'app-gerenciar-turmas',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GerenciarTurmasComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private api: ApiService, private route:ActivatedRoute) { }
+  turma=[];
+  disciplinas=[];
   ngOnInit() {
+    const id = parseInt(this.route.snapshot.paramMap.get('id'));
+    if (id) {
+      this.api.getTurma(id)
+        .subscribe(turma => this.turma = turma);
+        this.api.getProfessoresNaTurma(id).subscribe(disciplinas => this.disciplinas = disciplinas)
+      
+    }
+    console.log(this.disciplinas);
+
+
+
+    
+
+
+
   }
 
 }

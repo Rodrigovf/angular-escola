@@ -13,6 +13,8 @@ import { FrequenciasService } from './frequencias.service';
 import { ApiturmasService } from './apiturmas.service';
 import { ApiService } from './api.service';
 import { GerenciarTurmasComponent } from './gerenciar-turmas/gerenciar-turmas.component';
+import { RegsitroDeNotasComponent } from './regsitro-de-notas/regsitro-de-notas.component';
+import { GerenciarDisciplinaComponent } from './gerenciar-disciplina/gerenciar-disciplina.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { GerenciarTurmasComponent } from './gerenciar-turmas/gerenciar-turmas.co
     AdminComponent,
     PaginaNaoEncontradaComponent,
     GerenciarTurmasComponent,
+    RegsitroDeNotasComponent,
+    GerenciarDisciplinaComponent,
   ],
   providers: [
     FrequenciasService,
